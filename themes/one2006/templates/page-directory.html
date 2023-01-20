@@ -1,0 +1,23 @@
+{% extends "page.html" %}
+
+{% block content %}
+    <div class="row">
+        {% for article in articles if article.category in ['members'] %}
+            <div class="col s12 m6">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ article.member_name }}</span>
+                        <p><i class="material-icons tiny">account_circle</i> {{ article.member_section }}</p>
+                        <p><i class="material-icons tiny">place</i> {{ article.member_address }}</p>
+                        <p><i class="material-icons tiny">contact_phone</i> {{ article.member_phone }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}
